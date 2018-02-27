@@ -1,0 +1,187 @@
+﻿<!doctype html>
+<html lang="pt-br" class="no-js" ng-app="SGAP">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/alertify.min.css" />
+    <link rel="stylesheet" href="../css/default.min.css" />
+    <link rel="stylesheet" href="../css/semantic.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/style.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../css/style.css"> <!-- Resource style -->
+    <script src="../scripts/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+    <title>SGAP</title>
+</head>
+<body >
+    <header class="cd-main-header w3-card-2"  >
+        <a class="cd-logo" href="#0"><img src="../img/logo_swb.png" style="width:30px;height:30px" alt="Logo"></a>
+        <ul class="cd-header-buttons">
+            <li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
+            <li><a class="cd-nav-trigger" href="#cd-primary-nav"><span></span></a></li>
+        </ul> <!-- cd-header-buttons -->
+    </header>
+
+    <main class="cd-main-content" ui-view="">
+        <div ng-include="'Views/footer.html'"> </div>
+    </main>
+
+    <div class="cd-overlay"></div>
+    <nav class="cd-nav">
+        <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
+            <li class="has-children">
+                <a href="#">Relatórios</a>
+                <ul class="cd-nav-gallery is-hidden">
+                    <li class="go-back"><a href="#0">Menu</a></li>
+                    <li class="see-all"><a href="#">Relatórios</a></li>
+                    <li>
+                        <a class="cd-nav-item" href="#"> <!-- NG-IF ISADMIN --> 
+                            <img src="../img/user_icon.png"  alt="">
+                            <h3 class ="text-center">Usuários</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cd-nav-item" href="#">
+                            <img src="../img/icon_pdf.png" alt="">
+                            <h3 class ="text-center">Contra Cheque</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cd-nav-item"  href="#">
+                            <img src="../img/icon_apontamento.png"  alt="">
+                            <h3 class ="text-center">Apontamentos</h3>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-children">
+                <a href="#">Lançamentos</a>
+                <ul class="cd-nav-icons is-hidden">
+                    <li class="go-back"><a href="#0">Menu</a></li>
+                    <li class="see-all"><a href="#">Lançamentos</a></li>
+                    <li>
+                        <a class="cd-nav-item item-1" href="#">
+                            <h3>Cadastro de Usuário</h3>
+                            <p>Admnin, Desenv, Comercial.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cd-nav-item item-2" href="#">
+                            <h3>Folha de Pagamento</h3>
+                            <p>Importe da folha com a data de vigência.</p>
+                        </a>
+                    </li>             
+                </ul>
+            </li>
+            <li class="has-children">
+                <a href="#">Configurações</a>
+                <ul class="cd-secondary-nav is-hidden">
+                    <li class="go-back"><a href="#0">Menu</a></li>
+                    <li class="see-all"><a href="#">Configurações</a></li>
+                    <li class="has-children">
+                        <a href="#">Projetos</a>
+                        <ul class="is-hidden">
+                            <li class="go-back"><a href="#">Configurações</a></li>
+                            <li class="has-children"><a ui-sref="configCentroResultado">Centro de Resultado</a></li>
+                            <li class="has-children"><a href="#">Status do Projeto</a></li>
+                        </ul>
+                        <br />
+                        <a href="#">Tarefas</a>
+                        <ul class="is-hidden">
+                            <li class="go-back"><a href="#">Configurações</a></li>
+                            <li class="has-children"><a href="#">Status da Atividade</a></li>   <!-- Desenvolvimento, Acompanhamento.. -->
+                            <li class="has-children"><a href="#">Status da Situação</a></li>    <!-- Fechada, Resolvida, Em Andamento -->
+                            <li class="has-children"><a href="#">Tipo da Tarefa</a></li>        <!-- Receita, Despesa, Investimento SWB -->
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="#">Contatos</a>
+                        <ul class="is-hidden">
+                            <li class="see-all"><a href="#">Todas Empresas</a></li>
+                            <li><a href="#">Empresas</a></li> 
+                            <li><a href="#">Pessoas</a></li>
+                            <!--<li class="has-children">
+                                <a href="#0">Jeans</a>
+                                <ul class="is-hidden">
+                                    <li class="go-back"><a href="#0">Bottoms</a></li>
+                                    <li class="see-all"><a href="#">All Jeans</a></li>
+                                    <li><a href="#">Ripped</a></li>
+                                    <li><a href="#">Skinny</a></li>
+                                    <li><a href="#">Slim</a></li>
+                                    <li><a href="#">Straight</a></li>
+                                </ul>
+                            </li>-->
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="#">Usuários</a>
+                        <ul class="is-hidden">
+                            <li class="go-back"><a href="#0">Clothing</a></li>
+                            <li class="see-all"><a href="#">Todos Usuários</a></li>
+                            <li><a href="#">Usuário</a></li>
+                            <li><a href="#">Tipo de Usuários</a></li>
+                            <li><a href="#">Perfis de Acesso</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="has-children">
+                        <a href="#">Tops</a>
+                        <ul class="is-hidden">
+                            <li class="go-back"><a href="#0">Clothing</a></li>
+                            <li class="see-all"><a href="#">All Tops</a></li>
+                            <li><a href="#">Cardigans</a></li>
+                            <li><a href="#">Coats</a></li>
+                            <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
+                            <li><a href="#">Jumpers</a></li>
+                            <li><a href="#">Polo Shirts</a></li>
+                            <li><a href="#">Shirts</a></li>
+                            <li class="has-children">
+                                <a href="#0">T-Shirts</a>
+                                <ul class="is-hidden">
+                                    <li class="go-back"><a href="#0">Tops</a></li>
+                                    <li class="see-all"><a href="#">All T-shirts</a></li>
+                                    <li><a href="#">Plain</a></li>
+                                    <li><a href="#">Print</a></li>
+                                    <li><a href="#">Striped</a></li>
+                                    <li><a href="#">Long sleeved</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Vests</a></li>
+                        </ul>
+                    </li>-->
+                </ul>
+            </li>
+            <li><a ui-sref="#">Marco Túlio Arantes</a></li>
+        </ul> <!-- primary-nav -->
+    </nav> <!-- cd-nav -->
+    <div id="cd-search" class="cd-search">
+        <form>
+            <input type="search" placeholder="Buscar">
+        </form>
+    </div>
+
+
+
+    <script src="../scripts/jquery-2.1.1.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/jquery.mobile.custom.min.js"></script>
+    <script src="../scripts/main.js"></script> 
+    <script src="../scripts/angular.js"></script>
+    <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.7/angular-route.js"></script>
+    <script src="../scripts/angular-ui-router.js"></script>
+   <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>-->
+    <script src="../scripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="../scripts/alertify.min.js"></script>
+    <script src="../js/core/config.js"></script>
+    <script src="../js/core/module.js"></script>
+    <script src="../js/core/service.js"></script>
+    <script src="../js/core/route.js"></script>
+    <script src="../js/controllers/configCentroCusto.js"></script>
+    <!--<script src="js/controllers/index.js"></script>-->
+    
+    
+
+</body>
+</html>

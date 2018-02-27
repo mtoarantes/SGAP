@@ -1,0 +1,40 @@
+﻿<div class="container-fluid" ng-controller="ConfigCentroResultadoCtrl" ng-init="init()">
+    <div class="w3-card-2 row">
+            <div class="col-md-6">
+                <h3 class="title-h3"> Novo Centro de Resultado </h3>
+                <hr>
+                <form name="configCentroResultForm" role="form">
+                    <div class="form-group">
+                        <input type="text" ng-model="configCentroCusto.iNumCentroResultado" placeholder="Código CR" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" ng-model="configCentroCusto.strDescricao" placeholder="Descrição" class="form-control" />
+                    </div>
+                </form>
+            <div class="btn-group-sm">
+                <button ng-click="InsertCentroCusto(configCentroCusto)" class="btn btn-info">Cadastrar</button>
+                <button class="btn btn-danger" ng-click="resetForm(configCentroCusto)">Cancelar</button>
+            </div>
+        </div>
+   
+        <div class="col-md-6">
+            <h3 class="title-h3"> Centro de Resultado Cadastrados </h3>
+            <hr>
+                <table ng-table="ngParametros" class="tablesaw table-striped table-hover table-bordered table" show-filter="true">
+                    <tr ng-repeat="configCentroCusto in $data">
+                        <td title="'Centro de Custo'" sortable="'iNumCentroResultado'" filter="{iNumCentroResultado: 'text'}">
+                            {{configCentroCusto.iNumCentroResultado}}
+                        </td>
+                        <td title="'Descrição'" sortable="'strDescricao'" filter="{'strDescricao': 'number'}">
+                            {{configCentroCusto.strDescricao}}
+                        </td>
+                    </tr>
+                </table>
+            </div>    
+    </div>
+</div>
+
+
+
+
